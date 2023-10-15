@@ -23,7 +23,9 @@ body {
   gap: 50px;
   height: 100vh;
 }
-
+.btn{
+  display: none;
+}
 .panel {
   background: white;
   border-radius: 25px;
