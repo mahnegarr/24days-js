@@ -145,6 +145,9 @@ ul.menu button {
 
 button.in-cart {
   background: black;
+  right: -80px;
+  top: 0;
+  white-space: nowrap;
 }
 
 .cart p.empty {
