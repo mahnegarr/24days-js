@@ -150,6 +150,10 @@ button.in-cart {
   white-space: nowrap;
 }
 
+.cart{
+  margin-top: -4rem;
+  box-shadow: 0px 0px 0px #c7cbe3;
+}
 .cart p.empty {
   padding-left: 40px;
 }
