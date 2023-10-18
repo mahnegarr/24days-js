@@ -1,8 +1,9 @@
 import { menuItems } from "./app.js";
 const panel = document.querySelector(".panel");
 const panelCart = document.getElementById("panel-cart");
-const panelContainer = document.getElementById("container");
-
+const subtotalDiv = document.querySelector(".price.subtotal");
+const TaxDiv = document.querySelector(".price.tax");
+const totalDiv = document.querySelector(".price.total");
 let clickedItems = [];
 
 function addItem(items) {
@@ -31,6 +32,7 @@ function addToCart() {
     btn.addEventListener("click", (e) => {
       const id = e.target.dataset.id;
       const clickedItem = menuItems.find((i) => i.id === parseInt(id));
+      clickedItem.count = 1;
       clickedItems.push(clickedItem);
       btn.innerHTML = `<button class="in-cart">
             <img src="images/check.svg" alt="Check" />
@@ -40,11 +42,17 @@ function addToCart() {
     });
   });
 }
-let total =[]
+let subtotal = 0;
+let priceTax = 0;
+let total = 0;
 function showInCart() {
   panelCart.innerHTML = "";
   let ul;
   clickedItems.forEach((item) => {
+    const itemTotal = item.price * item.count;
+    subtotal = itemTotal;
+    priceTax = subtotal * 0.09;
+    total = subtotal + priceTax;
     ul = document.createElement("ul");
     ul.classList.add("cart-summary");
 
@@ -67,36 +75,17 @@ function showInCart() {
     </button>
     </div>
     <div class="subtotal">
-     $${(item.price * item.count).toFixed(2)}
+    $${(item.price * item.count).toFixed(2)}
     </div>
     </li>`;
-    total.push(item.price * item.count.toFixed(2))
     panelCart.appendChild(ul);
+    subtotalDiv.innerHTML = `$${subtotal.toFixed(2)}`;
+    TaxDiv.innerHTML = `$${priceTax.toFixed(2)}`;
+    totalDiv.innerHTML = `$${total.toFixed(2)}`;
   });
-  let totals;
-  clickedItems.forEach((item) => {
-    totals = document.createElement("div");
-    totals.classList.add("totals");
 
-    totals.innerHTML = `<div class="totals">
-    <div class="line-item">
-      <div class="label">Subtotal:${total}</div>
-      <div class="amount price subtotal">$10.80</div>
-    </div>
-    <div class="line-item">
-      <div class="label">Tax:</div>
-      <div class="amount price tax">$1.05</div>
-    </div>
-    <div class="line-item total">
-      <div class="label">Total:</div>
-      <div class="amount price total">$11.85</div>
-    </div>
-  </div>`;
-  panelContainer.appendChild(totals)
-  });
   increaseItems();
 }
-
 function increaseItems() {
   const upBtns = document.querySelectorAll(".up");
   const quantity = document.querySelector(".quantity");
@@ -106,13 +95,14 @@ function increaseItems() {
       let item = menuItems.find((i) => i.id === parseInt(id));
       item.count++;
       quantity.innerHTML = item.count;
-
       showInCart();
     });
   });
 }
+
 window.addEventListener("DOMContentLoaded", () => {
   addItem(menuItems);
   addToCart();
   showInCart();
 });
+

@@ -150,7 +150,7 @@ button.in-cart {
   white-space: nowrap;
 }
 
-.cart{
+.cart {
   margin-top: -4rem;
   box-shadow: 0px 0px 0px #c7cbe3;
 }
@@ -273,6 +273,7 @@ button.in-cart {
 }
 
 .totals {
+  margin-bottom: 2rem;
   padding: 35px 30px;
 }
 
