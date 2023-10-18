@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700;800&family=Roboto+Mono:wght@700&display=swap');
-
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 body {
   background: #F6F6F3;
   padding: 0;
@@ -17,6 +21,7 @@ body {
   background: #FFFFFF;
   box-shadow: 0px 0px 44px rgba(148, 146, 120, 0.23);
   border-radius: 20px;
+  margin: 2rem ;
   width: 765px;
   padding-top: 55px;
 }
