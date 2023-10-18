@@ -85,6 +85,7 @@ function showInCart() {
   });
 
   increaseItems();
+  decreaseItems();
 }
 function increaseItems() {
   const upBtns = document.querySelectorAll(".up");
@@ -99,10 +100,28 @@ function increaseItems() {
     });
   });
 }
+function decreaseItems() {
+  const upBtns = document.querySelectorAll(".down");
+  const quantity = document.querySelector(".quantity");
+  upBtns.forEach((down) => {
+    down.addEventListener("click", (e) => {
+      let id = e.target.dataset.id;
+      let item = menuItems.find((i) => i.id === parseInt(id));
+      if (item.count < 1) {
+        clickedItems = clickedItems.filter((item) => item.id !== parseInt(id));
+        showInCart()
+
+      } else {
+        item.count--;
+      }
+      quantity.innerHTML = item.count;
+      showInCart();
+    });
+  });
+}
 
 window.addEventListener("DOMContentLoaded", () => {
   addItem(menuItems);
   addToCart();
   showInCart();
 });
-
