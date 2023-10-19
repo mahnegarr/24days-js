@@ -6,8 +6,8 @@
 }
 body {
   background: #e9f5fa;
-  width: 100%;
-  height: auto;
+  width: 100vw;
+  height: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,7 +21,6 @@ body {
   display: flex;
   gap: 30px;
   justify-content: center;
-  margin: 3rem;
 }
 
 .day {
@@ -102,6 +101,7 @@ body {
 
 .content {
   color: var(--content);
+  padding-bottom: 4rem;
 }
 
 #weather,
