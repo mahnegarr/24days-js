@@ -1,11 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Oswald&display=swap');
-
-body {
-  background: #E9F5FA;
-  padding: 0;
+@import url("https://fonts.googleapis.com/css2?family=Krona+One&family=Oswald&display=swap");
+* {
   margin: 0;
-  min-width: 100vw;
-  min-height: 100vh;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #e9f5fa;
+  width: 100%;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,11 +21,12 @@ body {
   display: flex;
   gap: 30px;
   justify-content: center;
+  margin: 3rem;
 }
 
 .day {
-  color: #4DB0D3;
-  font-family: 'Krona One', sans-serif;
+  color: #4db0d3;
+  font-family: "Krona One", sans-serif;
   text-align: center;
 }
 
@@ -33,43 +36,43 @@ body {
 }
 
 .date {
-  font-size: 4.5rem;;
+  font-size: 4.5rem;
 }
 
 .cloudy {
-  --background: #4DB0D3;
-  --temperature: #E6DF95;
-  --content: #D3EBF4;
+  --background: #4db0d3;
+  --temperature: #e6df95;
+  --content: #d3ebf4;
 }
 
 .sunny {
-  --background: #E6DF95;
-  --temperature: #4DB0D3;
+  --background: #e6df95;
+  --temperature: #4db0d3;
   --content: #247490;
 }
 
 .stormy {
-  --background: #0E2E3A;
-  --temperature: #E6DF95;
-  --content: #D3EBF4;
+  --background: #0e2e3a;
+  --temperature: #e6df95;
+  --content: #d3ebf4;
 }
 
 .snowy {
-  --background: #BCE1EF;
-  --temperature: #0E2E3A;
+  --background: #bce1ef;
+  --temperature: #0e2e3a;
   --content: #247490;
 }
 
 .partly-cloudy {
-  --background: #4DB0D3;
-  --temperature: #E6DF95;
-  --content: #D3EBF4;
+  --background: #4db0d3;
+  --temperature: #e6df95;
+  --content: #d3ebf4;
 }
 
 .rainy {
-  --background: #2B8BAD;
-  --temperature: #E6DF95;
-  --content: #D3EBF4;
+  --background: #2b8bad;
+  --temperature: #e6df95;
+  --content: #d3ebf4;
 }
 
 .bar {
@@ -79,11 +82,12 @@ body {
   position: relative;
   width: 164px;
   padding-top: 252px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1), 11px 4px 34px rgba(32, 77, 92, 0.25);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1),
+    11px 4px 34px rgba(32, 77, 92, 0.25);
 }
 
 .temperature {
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   color: var(--temperature);
   font-size: 7rem;
   position: relative;
@@ -153,6 +157,3 @@ body {
   left: 31px;
   top: -13px;
 }
-
-
-
