@@ -120,7 +120,14 @@ body {
 }
 
 .precipitation {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
   margin-bottom: 10px;
+  height: 100%;
+}
+.precipitation p{
+  padding-left: .5rem;
 }
 
 .low .icon {
