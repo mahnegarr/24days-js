@@ -74,13 +74,27 @@ a:hover #my-circle {
   width: 60%;
   padding: 75px 95px;
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 100px;
   position: relative;
 }
-
+.centered {
+  margin: 0 auto;
+  top: 25%;
+}
 .product-image,
 .content {
   flex: 1;
+}
+
+.content {
+  width: 50%;
+  float: left;
+}
+.product-image {
+  display: flex;
+  justify-content: end;
 }
 
 .close {
